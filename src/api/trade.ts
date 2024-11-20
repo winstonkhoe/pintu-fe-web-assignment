@@ -23,4 +23,4 @@ const tradeApi = {
 }
 
 export { tradeApi }
-export type { PriceChangesData };
+export type { PriceChangesData, PriceChangePayload };
