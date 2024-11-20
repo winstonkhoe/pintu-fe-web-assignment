@@ -24,6 +24,7 @@ interface SupportedCurrenciesPayload {
   currencySymbol: string;
   name: string;
   logo: string;
+  logoSvg: string;
   decimal_point: number;
   listingDate: string;
   wallets: Wallet[];
@@ -36,8 +37,14 @@ type SupportedCurrenciesData = GeneralApiResponse & {
 };
 
 const walletApi = {
-  getSupportedCurrencies: async () : Promise<SupportedCurrenciesData> => {
-    return await fetchToJson(API_SUPPORTED_CURRENCIES)
+  getSupportedCurrencies: async (): Promise<SupportedCurrenciesData> => {
+    const data : SupportedCurrenciesData = await fetchToJson(API_SUPPORTED_CURRENCIES)
+    await Promise.all(data.payload.map(async payload => {
+      const logoSvgData = await fetch(payload.logo)
+      const logoSvg = await logoSvgData.text()
+      payload.logoSvg = logoSvg
+    }))
+    return data
   }
 }
 
