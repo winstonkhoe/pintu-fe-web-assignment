@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        positive: '#25A764',
+        negative: '#E54040'
       },
     },
   },
