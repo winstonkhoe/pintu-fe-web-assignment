@@ -49,4 +49,4 @@ const walletApi = {
 }
 
 export { walletApi };
-export type { SupportedCurrenciesData };
+export type { SupportedCurrenciesData, SupportedCurrenciesPayload };
