@@ -11,7 +11,6 @@ export default function Market() {
     isPending: isPendingPriceChanges,
     error: isErrorPriceChanges,
     data: dataPriceChanges,
-    isFetching: isFetchingPriceChanges
   } = useQuery({
     queryKey: ['price-changes'],
     queryFn: tradeApi.getPriceChanges
@@ -21,7 +20,6 @@ export default function Market() {
     isPending: isPendingSupportedCurrencies,
     error: isErrorSupportedCurrencies,
     data: dataSupportedCurrencies,
-    isFetching: isFetchingSupportedCurrencies
   } = useQuery({
     queryKey: ['supported-currencies'],
     queryFn: walletApi.getSupportedCurrencies
