@@ -6,7 +6,7 @@ const findPriceChange = (
 ) => {
   return priceChanges.find((priceChange) => {
     const firstPairPart = priceChange.pair.split('/')[0];
-    return firstPairPart.includes(currencyGroup.toLowerCase());
+    return firstPairPart === currencyGroup.toLowerCase();
   });
 };
 
