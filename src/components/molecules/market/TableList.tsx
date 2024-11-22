@@ -30,7 +30,7 @@ const MarketTableList = ({
         style={style}
       >
         <MarketTableRow
-          iconSvgText={currency.logoSvg}
+          svgUrl={currency.logo}
           color={currency.color}
           name={currency.name}
           currencyGroup={currency.currencyGroup}

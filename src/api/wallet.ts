@@ -43,13 +43,6 @@ const walletApi = {
       const data: SupportedCurrenciesData = await fetchToJson(
         API_SUPPORTED_CURRENCIES
       );
-      await Promise.all(
-        data.payload.map(async (payload) => {
-          const logoSvgData = await fetch(payload.logo);
-          const logoSvg = await logoSvgData.text();
-          payload.logoSvg = logoSvg;
-        })
-      );
       return data;
     }
   }

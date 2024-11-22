@@ -1,15 +1,18 @@
+import { ReactSVG } from 'react-svg';
+
 type SVGIconProps = {
-  svg: string;
+  src: string;
   color?: string;
 };
 
-const SvgIcon = ({ svg, color }: SVGIconProps) => {
+const SvgIcon = ({ src, color }: SVGIconProps) => {
   return (
-    <div
-      className='currency-icon cell'
-      dangerouslySetInnerHTML={{ __html: svg }}
-      style={color ? { color: color } : undefined}
-    />
+    <div className='currency-icon cell'>
+      <ReactSVG
+        src={src}
+        style={color ? { color: color } : undefined}
+      />
+    </div>
   );
 };
 

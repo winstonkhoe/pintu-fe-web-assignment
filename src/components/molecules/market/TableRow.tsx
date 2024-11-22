@@ -2,7 +2,7 @@ import { TableStatisticCell } from "@/components/atoms/market/TableStatisticCell
 import { SvgIcon } from "@/components/atoms/SvgIcon";
 
 type MarketTableRowProps = {
-  iconSvgText: string;
+  svgUrl: string;
   color: string;
   currencyGroup: string;
   name: string;
@@ -14,7 +14,7 @@ type MarketTableRowProps = {
 };
 
 const MarketTableRow = ({
-  iconSvgText,
+  svgUrl,
   color,
   currencyGroup,
   name,
@@ -27,7 +27,7 @@ const MarketTableRow = ({
   return (
     <div className='grid grid-cols-[80px_300px_150px_2fr_1fr_1fr_1fr_1fr] border-t border-t-white/50'>
       <SvgIcon
-        svg={iconSvgText}
+        src={svgUrl}
         color={color}
       />
       <div className='cell'>
