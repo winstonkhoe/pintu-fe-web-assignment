@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { useQuery } from '@tanstack/react-query';
 import { TableHeader } from '../atoms/market/TableHeader';
 import { tradeApi } from '@/api/trade';
@@ -10,19 +11,23 @@ export default function Market() {
   const {
     isPending: isPendingPriceChanges,
     error: isErrorPriceChanges,
-    data: dataPriceChanges,
+    data: dataPriceChanges
   } = useQuery({
     queryKey: ['price-changes'],
-    queryFn: tradeApi.getPriceChanges
+    queryFn: tradeApi.priceChanges.getAll,
+    staleTime: tradeApi.priceChanges.staleTime,
+    refetchInterval: tradeApi.priceChanges.refetchInterval
   });
 
   const {
     isPending: isPendingSupportedCurrencies,
     error: isErrorSupportedCurrencies,
-    data: dataSupportedCurrencies,
+    data: dataSupportedCurrencies
   } = useQuery({
     queryKey: ['supported-currencies'],
-    queryFn: walletApi.getSupportedCurrencies
+    queryFn: walletApi.supportedCurrencies.getAll,
+    staleTime: walletApi.supportedCurrencies.staleTime,
+    refetchInterval: walletApi.supportedCurrencies.refetchInterval
   });
 
   if (isPendingPriceChanges || isPendingSupportedCurrencies)
@@ -43,6 +48,7 @@ export default function Market() {
       );
     })
   };
+    
   return (
     <div className='flex justify-center py-10'>
       <div className='flex flex-col w-10/12 gap-8'>

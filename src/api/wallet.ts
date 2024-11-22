@@ -1,8 +1,7 @@
 import { fetchToJson } from '@/utils/api';
 import { GeneralApiResponse } from './common';
 
-const API_SUPPORTED_CURRENCIES =
-  'https://api.pintu.co.id/v2/wallet/supportedCurrencies';
+const API_SUPPORTED_CURRENCIES = '/api/wallet/supportedCurrencies';
 
 interface Wallet {
   currency_id: number;
@@ -37,16 +36,24 @@ type SupportedCurrenciesData = GeneralApiResponse & {
 };
 
 const walletApi = {
-  getSupportedCurrencies: async (): Promise<SupportedCurrenciesData> => {
-    const data : SupportedCurrenciesData = await fetchToJson(API_SUPPORTED_CURRENCIES)
-    await Promise.all(data.payload.map(async payload => {
-      const logoSvgData = await fetch(payload.logo)
-      const logoSvg = await logoSvgData.text()
-      payload.logoSvg = logoSvg
-    }))
-    return data
+  supportedCurrencies: {
+    staleTime: 60 * 1000,
+    refetchInterval: undefined,
+    getAll: async (): Promise<SupportedCurrenciesData> => {
+      const data: SupportedCurrenciesData = await fetchToJson(
+        API_SUPPORTED_CURRENCIES
+      );
+      await Promise.all(
+        data.payload.map(async (payload) => {
+          const logoSvgData = await fetch(payload.logo);
+          const logoSvg = await logoSvgData.text();
+          payload.logoSvg = logoSvg;
+        })
+      );
+      return data;
+    }
   }
-}
+};
 
 export { walletApi };
 export type { SupportedCurrenciesData, SupportedCurrenciesPayload };

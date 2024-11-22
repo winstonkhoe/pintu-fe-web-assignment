@@ -1,7 +1,7 @@
 import { fetchToJson } from '@/utils/api';
 import { GeneralApiResponse } from './common';
 
-const API_PRICE_CHANGES = 'https://api.pintu.co.id/v2/trade/price-changes';
+const API_PRICE_CHANGES = '/api/trade/price-changes';
 
 interface PriceChangePayload {
   pair: string;
@@ -17,8 +17,12 @@ type PriceChangesData = GeneralApiResponse & {
 };
 
 const tradeApi = {
-  getPriceChanges: async () : Promise<PriceChangesData> => {
-    return await fetchToJson(API_PRICE_CHANGES)
+  priceChanges: {
+    staleTime: 5 * 1000 - 1,
+    refetchInterval: 5 * 1000,
+    getAll: async () : Promise<PriceChangesData> => {
+      return await fetchToJson(API_PRICE_CHANGES)
+    }
   }
 }
 
