@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 
 import Market from './Market';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -8,8 +8,6 @@ const meta = {
 } satisfies Meta<typeof Market>;
 
 export default meta;
-
-type Story = StoryObj<typeof meta>;
 
 const mockSupportedCurrencies = {
   code: 'success',
