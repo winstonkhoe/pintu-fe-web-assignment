@@ -1,5 +1,5 @@
-import { TableStatisticCell } from "@/components/atoms/market/TableStatisticCell";
-import { SvgIcon } from "@/components/atoms/SvgIcon";
+import { TableStatisticCell } from '@/components/atoms/market/TableStatisticCell';
+import { SvgIcon } from '@/components/atoms/SvgIcon';
 
 type MarketTableRowProps = {
   svgUrl: string;
@@ -47,4 +47,4 @@ const MarketTableRow = ({
   );
 };
 
-export {MarketTableRow}
+export { MarketTableRow };
