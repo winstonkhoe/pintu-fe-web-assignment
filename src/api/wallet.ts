@@ -23,7 +23,6 @@ interface SupportedCurrenciesPayload {
   currencySymbol: string;
   name: string;
   logo: string;
-  logoSvg: string;
   decimal_point: number;
   listingDate: string;
   wallets: Wallet[];
