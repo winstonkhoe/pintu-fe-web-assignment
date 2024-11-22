@@ -1,7 +1,7 @@
 import { fetchToJson } from '@/utils/api';
-import { GeneralApiResponse } from './common';
+import { BASE_URL, GeneralApiResponse } from './common';
 
-const API_SUPPORTED_CURRENCIES = '/api/wallet/supportedCurrencies';
+const API_SUPPORTED_CURRENCIES = `${BASE_URL}/api/wallet/supportedCurrencies`;
 
 interface Wallet {
   currency_id: number;

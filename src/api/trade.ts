@@ -1,7 +1,7 @@
 import { fetchToJson } from '@/utils/api';
-import { GeneralApiResponse } from './common';
+import { BASE_URL, GeneralApiResponse } from './common';
 
-const API_PRICE_CHANGES = '/api/trade/price-changes';
+const API_PRICE_CHANGES = `${BASE_URL}/api/trade/price-changes`;
 
 interface PriceChangePayload {
   pair: string;
