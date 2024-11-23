@@ -17,10 +17,5 @@ export const Default: Story = {
     color: 'color',
     currencyGroup: 'BTC',
     name: 'Bitcoin',
-    price: '840230129',
-    day: '1.62',
-    week: '-1.2',
-    month: '1.13',
-    year: '4.33'
   }
 };
