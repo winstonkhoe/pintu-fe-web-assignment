@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+
+  .cell {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,19 +38,14 @@ body {
   display: none;
 }
 
-.scrollbar-none {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
 .currency-icon svg {
   width: 40px;
   height: 40px;
 }
-
-.cell {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 20px 20px;
-}
+/* 
+@media (max-width: 768px) {
+  .currency-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+} */

@@ -7,7 +7,7 @@ type SVGIconProps = {
 
 const SvgIcon = ({ src, color }: SVGIconProps) => {
   return (
-    <div className='currency-icon cell'>
+    <div className='currency-icon sm:cell'>
       <ReactSVG
         src={src}
         style={color ? { color: color } : undefined}

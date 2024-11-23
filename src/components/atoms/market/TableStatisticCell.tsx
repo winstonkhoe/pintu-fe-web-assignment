@@ -6,7 +6,7 @@ const TableStatisticCell = ({ value }: TableStatisticCellProps) => {
   const isPositive = parseFloat(value) > 0.0;
 
   return (
-    <div className='cell justify-center'>
+    <div className='sm:cell justify-center'>
       <p
         className={`font-bold ${
           isPositive ? 'text-positive' : 'text-negative'
