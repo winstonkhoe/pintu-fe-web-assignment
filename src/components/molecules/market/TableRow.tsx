@@ -22,7 +22,7 @@ const MarketTableRow = ({
     return null
   }
   return (
-    <div className='grid grid-cols-[80px_300px_150px_2fr_1fr_1fr_1fr_1fr] border-t border-t-white/50'>
+    <div className='grid grid-cols-[80px_200px_100px_3fr_2fr_2fr_2fr_2fr]'>
       <SvgIcon
         src={svgUrl}
         color={color}
