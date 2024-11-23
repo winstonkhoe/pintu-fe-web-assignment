@@ -1,25 +1,20 @@
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { MarketTableRow } from './TableRow';
+import { useSupportedCurrencies } from '@/hooks/wallet';
+import { usePriceChanges } from '@/hooks/trade';
 import { findPriceChange } from '@/helpers/trade';
-import { PriceChangesData } from '@/api/trade';
-import { SupportedCurrenciesData } from '@/types/Wallet';
 
-type MarketTableListProps = {
-  supportedCurrencies: SupportedCurrenciesData;
-  priceChanges: PriceChangesData;
-};
-
-const MarketTableList = ({
-  supportedCurrencies,
-  priceChanges
-}: MarketTableListProps) => {
+const MarketTableList = () => {
+  const { data: supportedCurrenciesData } = useSupportedCurrencies();
+  const { data: priceChangesData } = usePriceChanges();
   const rowHeight = 80;
   const Row = ({ index, style }: ListChildComponentProps) => {
-    const currency = supportedCurrencies.payload[index];
+    const currency = supportedCurrenciesData[index];
     const currencyPriceChange = findPriceChange(
       currency.currencyGroup,
-      priceChanges.payload
+      priceChangesData
     );
+
     if (!currencyPriceChange) {
       return null;
     }
@@ -45,11 +40,12 @@ const MarketTableList = ({
   };
   return (
     <FixedSizeList
-      height={supportedCurrencies.payload.length * rowHeight}
+      height={10 * rowHeight}
       className='scrollbar-none'
       width={'100%'}
-      itemCount={supportedCurrencies.payload.length}
+      itemCount={supportedCurrenciesData.length}
       itemSize={rowHeight}
+      onItemsRendered={props => console.log('onItemsRendered', props)}
     >
       {Row}
     </FixedSizeList>

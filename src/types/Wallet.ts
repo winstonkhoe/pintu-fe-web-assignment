@@ -31,4 +31,4 @@ type SupportedCurrenciesData = GeneralApiResponse & {
   payload: SupportedCurrenciesPayload[];
 };
 
-export type { SupportedCurrenciesData };
+export type { SupportedCurrenciesPayload, SupportedCurrenciesData };
