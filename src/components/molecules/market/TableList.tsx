@@ -1,8 +1,6 @@
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { MarketTableRow } from './TableRow';
 import { useSupportedCurrencies } from '@/hooks/wallet';
-import { usePriceChanges } from '@/hooks/trade';
-import { findPriceChange } from '@/helpers/trade';
 
 const MarketTableList = () => {
   const { data: supportedCurrenciesData } = useSupportedCurrencies();
