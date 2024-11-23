@@ -2,7 +2,7 @@ import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { MarketTableRow } from './TableRow';
 import { findPriceChange } from '@/helpers/trade';
 import { PriceChangesData } from '@/api/trade';
-import { SupportedCurrenciesData } from '@/api/wallet';
+import { SupportedCurrenciesData } from '@/types/Wallet';
 
 type MarketTableListProps = {
   supportedCurrencies: SupportedCurrenciesData;

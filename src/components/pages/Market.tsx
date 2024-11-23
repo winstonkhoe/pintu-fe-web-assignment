@@ -3,9 +3,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { TableHeader } from '../atoms/market/TableHeader';
 import { tradeApi } from '@/api/trade';
-import { SupportedCurrenciesData, walletApi } from '@/api/wallet';
+import { walletApi } from '@/api/wallet';
 import { findPriceChange } from '@/helpers/trade';
 import { MarketTableList } from '../molecules/market/TableList';
+import { SupportedCurrenciesData } from '@/types/Wallet';
 
 export default function Market() {
   const {

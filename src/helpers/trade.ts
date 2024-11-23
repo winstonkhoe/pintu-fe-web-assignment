@@ -1,4 +1,4 @@
-import { PriceChangePayload } from '@/api/trade';
+import { PriceChangePayload } from "@/types/Trade";
 
 const findPriceChange = (
   currencyGroup: string,
