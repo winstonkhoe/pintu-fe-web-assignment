@@ -7,10 +7,10 @@ interface TableHeaderType {
 
 const TableHeader = () => {
   return [
-    <div className='hidden sm:flex flex-1'>
+    <div key={'desktop-table-header'} className='hidden sm:flex flex-1'>
       <DesktopTableHeader />
     </div>,
-    <div className="flex sm:hidden">
+    <div key={'mobile-table-header'} className="flex sm:hidden">
       <MobileTableHeader />
     </div>
   ];
