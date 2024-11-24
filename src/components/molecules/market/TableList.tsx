@@ -12,7 +12,7 @@ const MarketTableList = () => {
       <div
         key={currency.currency_id}
         style={style}
-        className='first:border-none border-t border-t-white/50'
+        className='first:border-none border-t dark:border-t-white/50'
       >
         <MarketTableRow
           svgUrl={currency.logo}

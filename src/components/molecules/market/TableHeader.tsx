@@ -28,7 +28,7 @@ const DesktopTableHeader = () => {
     { text: '1 THN', isSortable: true, alignment: 'center' }
   ];
   return (
-    <div className='w-full grid grid-cols-[80px_200px_100px_3fr_2fr_2fr_2fr_2fr] overflow-hidden border-b border-b-white/50'>
+    <div className='w-full grid grid-cols-[80px_200px_100px_3fr_2fr_2fr_2fr_2fr] overflow-hidden border-b dark:border-b-white/50'>
       {headers.map((header, headerIndex) => {
         const isCenter = header.alignment === 'center';
         const isRight = header.alignment === 'right';
@@ -55,7 +55,7 @@ const MobileTableHeader = () => {
     { text: '24 JAM', isSortable: true, alignment: 'right' },
   ];
   return (
-    <div className='grid grid-cols-[1fr_3fr] overflow-hidden border-b border-b-white/50'>
+    <div className='grid grid-cols-[1fr_3fr] overflow-hidden border-b dark:border-b-white/50'>
       {headers.map((header, headerIndex) => {
         const isCenter = header.alignment === 'center';
         const isRight = header.alignment === 'right';

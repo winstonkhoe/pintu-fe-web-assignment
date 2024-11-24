@@ -22,9 +22,10 @@ const FilterList = () => {
     'Ekosistem BRC-20'
   ];
   return (
-    <div className='flex gap-3 overflow-x-auto'>
+    <div className='flex px-4 sm:px-0 gap-3 overflow-x-auto scrollbar-none'>
       {filters.map((filter) => (
         <Chip
+          key={filter}
           text={filter}
           isActive={filter === activeFilter}
           onClick={() => setActiveFilter(filter)}
