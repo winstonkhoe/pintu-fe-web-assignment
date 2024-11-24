@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TableHeader } from './TableHeader';
+import TableHeader from './TableHeader';
 
 const meta = {
   component: TableHeader,

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { MarketTableList } from './TableList';
+import MarketTableList from './TableList';
 
 const meta = {
   component: MarketTableList,
