@@ -35,4 +35,4 @@ const MarketTableList = () => {
   );
 };
 
-export { MarketTableList };
+export default MarketTableList;

@@ -1,7 +1,7 @@
 'use client';
 
-import { TableHeader } from '../molecules/market/TableHeader';
-import { MarketTableList } from '../molecules/market/TableList';
+import TableHeader from '../molecules/market/TableHeader';
+import MarketTableList from '../molecules/market/TableList';
 
 export default function Market() {
   return (

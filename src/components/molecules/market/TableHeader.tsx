@@ -76,4 +76,4 @@ const MobileTableHeader = () => {
   );
 }
 
-export { TableHeader };
+export default TableHeader;
