@@ -1,12 +1,19 @@
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { MarketTableRow } from './TableRow';
 import { useSupportedCurrencies } from '@/hooks/wallet';
+import { useFilter } from '@/contexts/FilterContext';
 
 const MarketTableList = () => {
   const { data: supportedCurrenciesData } = useSupportedCurrencies();
+  const { filter } = useFilter();
+
+  const filteredCurrencies = supportedCurrenciesData?.filter((currency) =>
+    currency.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
   const rowHeight = 80;
   const Row = ({ index, style }: ListChildComponentProps) => {
-    const currency = supportedCurrenciesData[index];
+    const currency = filteredCurrencies[index];
 
     return (
       <div
@@ -25,9 +32,9 @@ const MarketTableList = () => {
   };
   return (
     <FixedSizeList
-      height={13 * rowHeight}
+      height={Math.min(13, filteredCurrencies.length) * rowHeight}
       width={'100%'}
-      itemCount={supportedCurrenciesData.length}
+      itemCount={filteredCurrencies.length}
       itemSize={rowHeight}
     >
       {Row}

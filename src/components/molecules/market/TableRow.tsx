@@ -77,7 +77,7 @@ const MobileMarketTableRow = ({
   data
 }: SpecificMarketTableRow) => {
   return (
-    <div className='w-full grid grid-cols-[1fr_2fr_3fr]'>
+    <div className='w-full grid grid-cols-[1fr_2fr_2fr]'>
       <div className='flex justify-center items-center'>
         <SvgIcon
           src={svgUrl}

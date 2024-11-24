@@ -21,6 +21,15 @@ const FilterList = () => {
     'IoT',
     'Ekosistem BRC-20'
   ];
+
+  const toggleFilter = (filter: string) => {
+    if (activeFilter === filter) {
+      setActiveFilter('');
+      return;
+    }
+    setActiveFilter(filter);
+  };
+
   return (
     <div className='flex px-4 sm:px-0 gap-3 overflow-x-auto scrollbar-none'>
       {filters.map((filter) => (
@@ -28,7 +37,7 @@ const FilterList = () => {
           key={filter}
           text={filter}
           isActive={filter === activeFilter}
-          onClick={() => setActiveFilter(filter)}
+          onClick={() => toggleFilter(filter)}
         />
       ))}
     </div>

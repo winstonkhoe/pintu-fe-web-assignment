@@ -1,6 +1,7 @@
 'use client';
 
 import FilterList from '../molecules/market/FilterList';
+import SearchBar from '../molecules/market/SearchBar';
 import TableHeader from '../molecules/market/TableHeader';
 import MarketTableList from '../molecules/market/TableList';
 
@@ -12,9 +13,7 @@ export default function Market() {
           <h1 className='text-base sm:text-2xl font-bold'>
             Harga Crypto dalam Rupiah Hari Ini
           </h1>
-          <div className='hidden rounded-lg border dark:border-white/30 w-[300px] sm:flex gap-2 px-4 py-3'>
-            <p className='opacity-60 text-sm'>Cari aset di Pintu</p>
-          </div>
+          <SearchBar />
         </div>
         <FilterList />
         <div className='flex flex-col border dark:border-white/50 sm:rounded-lg'>
