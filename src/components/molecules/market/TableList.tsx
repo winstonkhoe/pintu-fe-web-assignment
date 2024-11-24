@@ -30,6 +30,7 @@ const MarketTableList = () => {
       </div>
     );
   };
+  
   return (
     <FixedSizeList
       height={Math.min(13, filteredCurrencies.length) * rowHeight}
