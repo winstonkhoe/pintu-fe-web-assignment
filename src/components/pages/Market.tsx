@@ -1,5 +1,6 @@
 'use client';
 
+import FilterList from '../molecules/market/FilterList';
 import TableHeader from '../molecules/market/TableHeader';
 import MarketTableList from '../molecules/market/TableList';
 
@@ -15,6 +16,7 @@ export default function Market() {
             <p className='opacity-60 text-sm'>Cari aset di Pintu</p>
           </div>
         </div>
+        <FilterList />
         <div className='flex flex-col border border-white/50 sm:rounded-lg'>
           <TableHeader />
           <MarketTableList />
