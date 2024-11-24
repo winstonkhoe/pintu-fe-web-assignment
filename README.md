@@ -30,17 +30,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Libraries
 
 * **React Window** — Used for virtualization window
-  pros: improve initial rendering load
-  cons: look is not that similar to the ones at pintu's /market
+  * pros: improve initial rendering load
+  * cons: look is not that similar to the ones at pintu's /market
 * **React Icons** — For several icons used inside
-  pros: widely used, easy
-  cons: not that much.. but maybe limited options??
+  * pros: widely used, easy
+  * cons: not that much.. but maybe limited options??
 * **React SVG** — To handle SVG injection, so we can manipulate color
-  pros: have cache
-  cons: client side, initial load may have not image on it.
+  * pros: have cache
+  * cons: client side, initial load may have not image on it.
 * **Lodash** - for debounce
-  pros: simple, easy
-  cons: -
+  * pros: simple, easy
+  * cons: -
 
 ## State Management
 
@@ -85,8 +85,8 @@ Added for icon (cross icon), and search bar's input
   Add virtualizations window to reduce high initial rendering load (Lists contains 300+)
 * **Reduce Rerendering on Price Change**
   To prevent a lot of whole element re-rendering on price change, I've prevented from making and using hook to Pair SupportedCurrencies with periodically fetched PriceChanges. I've found it's more "less" cleaner code, but with better performance.
-  pros: improve performance
-  cons: more lines of code to maintain
+  * pros: improve performance
+  * cons: more lines of code to maintain
 
 ## Future Improvements
 
