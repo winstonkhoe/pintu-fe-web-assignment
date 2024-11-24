@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 **Working** **demo** of the page can be found here — [https://pintu-fe-web-assignment.vercel.app/](https://pintu-fe-web-assignment.vercel.app/)
 
+**Demo explanation** of the web can be found here — [https://youtu.be/Ba78jEmFht0](https://youtu.be/Ba78jEmFht0)
+
 # Application Design Documentation
 
 ## **Features**
